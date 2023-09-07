@@ -1,3 +1,4 @@
 #!/bin/bash
- gcc *.c 
-./a.out
+ gcc main.c
+ echo $(./a.out) > c
+ export CFILE=main.c
