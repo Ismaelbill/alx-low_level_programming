@@ -1,2 +1,3 @@
 #!/bin/bash
- gcc main.c && echo $(./a.out) > c && export CFILE=main.c
+ gcc -E main.c
+ export CFILE=main.c
