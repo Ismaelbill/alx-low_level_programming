@@ -16,6 +16,6 @@ int main(void)
 			num = num + 39;
 		num++;
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
