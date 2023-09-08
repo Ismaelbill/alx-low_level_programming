@@ -2,6 +2,7 @@
 
 /*
  * main - entry point
+ *
  * Return: Always 0 (Success)
  */
 
@@ -12,7 +13,7 @@ int main(void)
 	while (num <= 102)
 	{
 		putchar(num);
-		if(num == 57)
+		if (num == 57)
 			num = num + 39;
 		num++;
 	}
