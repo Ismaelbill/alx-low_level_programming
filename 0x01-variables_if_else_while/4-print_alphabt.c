@@ -13,11 +13,11 @@ int main(void)
 
 	while (start <= end)
 	{
-		putchar(start);
 		if (start == 'q' || start == 'e')
 		{
 			start++;
 		}
+		putchar(start);
 		start++;
 	}
 	putchar('\n');
