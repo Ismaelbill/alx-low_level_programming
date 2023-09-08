@@ -12,12 +12,13 @@ int main(void)
 	char start = 'a';
 	char startCapital = 'A';
 	char endCapital = 'Z';
+
 	while (start <= end)
 	{
 		putchar(start);
 		start++;
 	}
-	while (startCapital < endCapital)
+	while (startCapital <= endCapital)
 	{
 		putchar(startCapital);
 		startCapital++;
