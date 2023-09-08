@@ -4,11 +4,14 @@
  * main - Entry point
  *
  * Return: Always 0 (Success)
- * */
+ * 
+ */
 
 int main(void)
 {
-	char end = 'z', start = 'a';
+	char end = 'z';
+	char start = 'a';
+
 	while (start <= end) {
 		putchar(start);
 		start++;
