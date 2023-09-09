@@ -16,7 +16,7 @@ int main(void)
 		{
 			for (k = 0; k <= 9; k++)
 			{
-				for (l = j+1; l <= 9; l++)
+				for (l = j; l <= 9; l++)
 				{
 				/*	if (i == 0 && j == 0 && k == 0 && l == 0)
 						continue;*/
