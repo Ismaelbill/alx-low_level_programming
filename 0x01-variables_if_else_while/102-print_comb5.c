@@ -20,7 +20,7 @@ int main(void)
 				{
 					if (i == 0 && j == 0 && k == 0 && l == 0)
 						continue;
-					if (l == 0)
+					if (k == 0 && l == 0)
 						continue;
 					putchar(i + '0');
 					putchar(j + '0');
