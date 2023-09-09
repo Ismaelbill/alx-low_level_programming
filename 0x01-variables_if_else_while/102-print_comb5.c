@@ -9,21 +9,32 @@
 int main(void)
 {
 
-	int i, j;
-	
+      	int i, j, k, l;
+
+ labe_loo:
 	for (i = 0; i <= 9; i++)
 	{
-		for (j = 1; j <= 9; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			if (i == 9 && j == 9)
-				break;	
-			putchar(i + '0');
-			putchar(i + '0');
-			putchar(' ');
-			putchar(i + '0');
-			putchar(j + '0');
-			putchar(',');
-			putchar(' ');
+			for (k = 0; k <= 9; k++)
+			{
+				for (l = 1; l <= 9; l++)
+				{
+					putchar(i + '0');
+					putchar(j + '0');
+					putchar(' ');
+					putchar(k + '0');
+					putchar(l + '0');
+					if (i == 9 && j == 8 && k == 9 && l == 9)
+					{
+					  return 0;
+					}
+					putchar(',');
+					putchar(' ');
+				}
+			
+			}
+		
 		}
 	}
 	putchar('\n');
