@@ -13,18 +13,18 @@ void print_triangle(int size)
 
 	if (size == 0)
 	{
-		printf("\n");
+		_putchar('\n');
 	}
 	for (i = 1; i <= size; i++)
 	{
-		for (j = size - i; j > 0; j--)
+		for (j = (size - i); j > 0; j--)
 		{
-			printf(" ");
+			_putchar(' ');
 		}
 		for (k = 1; k <= i; k++)
 		{
-			printf("#");
+			_putchar('#');
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
