@@ -15,7 +15,7 @@ int main(void)
 	for (i = 0; i < 89; i++)
 	{
 		tmp = current + previous;
-		if (i == 49)
+		if (i == 88)
 		{
 			printf("%ld", tmp);
 			break;
