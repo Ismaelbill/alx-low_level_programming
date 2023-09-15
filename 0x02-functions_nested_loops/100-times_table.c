@@ -13,21 +13,22 @@ void print_times_table(int n)
             result = (i * j);
             if (j == 0)
             {
-                /*printf("%d", result);
+                /*
                 
-                printf(",   %d", result);
-                
-                */
                 _putchar(result / 10 + '0');
-                continue;
-            }
-            if (result < 10)
-            {
+                
                 _putchar(',');
                 _putchar(' ');
                 _putchar(' ');
                 _putchar(' ');
                 _putchar(result / 10 + '0');
+                */
+                printf("%d", result);
+                continue;
+            }
+            if (result < 10)
+            {
+                printf(",   %d", result);
             }
             else if (result >= 10 && result < 100)
             {
