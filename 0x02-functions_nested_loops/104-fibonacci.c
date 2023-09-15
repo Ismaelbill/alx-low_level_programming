@@ -12,7 +12,7 @@ int main(void)
 
 	unsigned long int i, current = 1, previous = 0, tmp = 0;
 
-	for (i = 0; i < 89; i++)
+	for (i = 0; i <= 89; i++)
 	{
 		tmp = current + previous;
 		if (i == 89)
