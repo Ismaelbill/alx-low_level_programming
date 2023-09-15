@@ -10,17 +10,17 @@
 int main(void)
 {
 
-	unsigned long long i, current = 1, previous = 0, tmp = 0;
+	unsigned long  i, current = 1, previous = 0, tmp = 0;
 
 	for (i = 0; i <= 89; i++)
 	{
 		tmp = current + previous;
 		if (i == 89)
 		{
-			printf("%lld", tmp);
+			printf("%ld", tmp);
 			break;
 		}
-		printf("%lld, ", tmp);
+		printf("%ld, ", tmp);
 		previous = current;
 		current = tmp;
 	}
