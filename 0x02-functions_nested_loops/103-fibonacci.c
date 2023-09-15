@@ -10,14 +10,17 @@
 int main(void)
 {
 
-	unsigned long i, current = 1, previous = 0, tmp = 0;
+	unsigned long current = 1, previous = 0, tmp = 0;
 	float result = 0;
 
-	for (i = 0; i < 4000000; i++)
+	while (1)
 	{
+		if (tmp >= 4000000)
+			break;
+		
 		tmp = current + previous;
-		if (tmp % 2 == 0)
-			result += tmp;
+		if ((tmp % 2) == 0)
+			result = result + tmp;
 		previous = current;
 		current = tmp;
 	}
