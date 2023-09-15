@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (tmp >= 4000000)
 			break;
-		
+
 		tmp = current + previous;
 		if ((tmp % 2) == 0)
 			result = result + tmp;
