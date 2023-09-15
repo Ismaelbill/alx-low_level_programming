@@ -6,23 +6,13 @@ void print_times_table(int n)
 
     for (i = 0; i < (n + 1); i++)
     {
-        if (n <= 0 || n >= 15)
+        if (n < 0 || n >= 15)
             break;
         for (j = 0; j < (n + 1); j++)
         {
             result = (i * j);
             if (j == 0)
             {
-                /*
-                
-                _putchar(result / 10 + '0');
-                
-                _putchar(',');
-                _putchar(' ');
-                _putchar(' ');
-                _putchar(' ');
-                _putchar(result / 10 + '0');
-                */
                 printf("%d", result);
                 continue;
             }
