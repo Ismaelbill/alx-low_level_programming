@@ -8,8 +8,7 @@
  */
 int main(void)
 {
-
-	char str[] = "Expect the best. Prepare for the worst.\n";
+	char str[] = "Expect the best. Prepare for the worst";
 	char *ptr;
 
 	ptr = cap_string(str);
