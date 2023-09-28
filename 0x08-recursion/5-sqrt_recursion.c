@@ -11,7 +11,7 @@ int func(int n, int val);
 
 int _sqrt_recursion(int n)
 {
-    return func(n, 1);
+	return (func(n, 1));
 }
 
 /**
@@ -23,16 +23,10 @@ int _sqrt_recursion(int n)
 
 int func(int n, int val)
 {
-    if (val * val == n)
-    {
-        return val;
-    }
-    else if (val * val < n)
-    {
-        return func(n, val + 1);
-    }
-    else
-        return -1;
-    
-    
+	if (val * val == n)
+		return (val);
+	else if (val * val < n)
+		return (func(n, val + 1));
+	else
+		return (-1);
 }
