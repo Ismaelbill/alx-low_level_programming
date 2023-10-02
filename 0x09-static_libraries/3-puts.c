@@ -1,17 +1,20 @@
 #include "main.h"
-#include <unistd.h>
 /**
- * _puts - funtion that prints a string, followed by a new line, to stdout
+ *_puts - prints a string
+ *@str: A pointer to an int that will be changed
  *
- * @str: parameter of _puts
-*/
+ *Return: void which means our answer is correct
+ */
 
 void _puts(char *str)
 {
-	while (*str != '\0')
-	{
-		write(STDOUT_FILENO, str, 1);
-		str++;
-	}
-	write(STDOUT_FILENO, "\n", 1);
+
+int i;
+
+for (i = 0; str[i] != '\0'; i++)
+{
+_putchar(str[i]);
+}
+_putchar('\n');
+return;
 }
