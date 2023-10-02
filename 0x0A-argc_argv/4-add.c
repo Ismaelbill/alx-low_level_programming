@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
 	char *ch;
 
 	while (--argc)
-    {
-        for (ch = argv[argc]; *ch; ch++)
-        {
-            if (*ch < '0' || *ch > '9')
-                return (printf("Error\n"), 1);
-        }
-        sum += atoi(argv[argc]);
-    }
-    printf("%i\n", sum);
+	{
+		for (ch = argv[argc]; *ch; ch++)
+		{
+			if (*ch < '0' || *ch > '9')
+				return (printf("Error\n"), 1);
+		}
+		sum += atoi(argv[argc]);
+	}
+	printf("%i\n", sum);
 	return (0);
 }
