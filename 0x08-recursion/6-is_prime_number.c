@@ -24,10 +24,15 @@ int is_prime_number(int n)
 
 int check(int num, int n)
 {
-	if (n >= num && num > 1)
-		return (1);
-	else if (num % n == 0 || num <= 1)
+
+	if (num <= 1)
 		return (0);
-	else
+	if (n < num)
+	{
+		if (num % n == 0)
+			return (0);
 		return (check(num, n + 1));
+	}
+	else
+		return (1);
 }
