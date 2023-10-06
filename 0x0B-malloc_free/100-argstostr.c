@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		totalLength += strlen(av[i]);
 
-	totalLength += ac - 1;
+	totalLength += ac;
 	concatenateChar = (char *)malloc((totalLength + 1) * sizeof(char));
 
 	if (concatenateChar == 0)
