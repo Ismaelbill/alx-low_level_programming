@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	ptrFunc = get_op_func(argv[2]);
 	if (!ptrFunc)
 		printf("Error!\n"), exit(99);
-	if (!b && (argv[2][0] == '/' || argv[2][0] == '%'))
+	if ((b == 0) && ((argv[2][0] == '/') || (argv[2][0] == '%')))
 		printf("Error!\n"), exit(100);
 	printf("%d\n", ptrFunc(a, b));
 	return (0);
