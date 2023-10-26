@@ -2,22 +2,19 @@
 #include <stdio.h>
 
 /**
- * _strlen - function that returns the length of a string
- *
- * @s: parameter
- *
- * Return: the length of a string
+ * _strlen_recursion - function that returns the length of a string
+ * @s: string
+ * Return: length of a string
  */
 
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
-	int count;
-
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+        if (*s == '\0')
+                return (0);
+        else
+                return (1 + _strlen_recursion(s + 1));
 }
+
 
 /**
  * func - function that compares characters recursively to see if
@@ -49,7 +46,7 @@ int func(int start, int end, char *str)
 
 int is_palindrome(char *s)
 {
-	int start = 0, end = _strlen(s) - 1;
+	int start = 0, end = _strlen_recursion(s) - 1;
 
 	return (func(start, end, s));
 }
