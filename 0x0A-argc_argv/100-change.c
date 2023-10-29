@@ -19,8 +19,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	else if (atoi(argv[1]) < 0)
-		printf("%i\n", 0);
 	var = atoi(argv[1]);
 	while (var > 0 && !(var < 0))
 	{
