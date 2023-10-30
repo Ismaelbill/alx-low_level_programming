@@ -14,11 +14,13 @@ char *_strdup(char *str)
 	int length = strlen(str) + 1, i;
 	char *ptr;
 
+	if (str == NULL)
+                return (NULL);
+
 	ptr = malloc(sizeof(char) * length);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < length; i++)
 		ptr[i] = str[i];
-	ptr[i] = '\0';
 	return (ptr);
 }
