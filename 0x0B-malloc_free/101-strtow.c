@@ -44,6 +44,6 @@ char **strtow(char *str)
 		ptr[i][l] = '\0';
 		wordStart += j;
 	}
-	ptr[countWord] = NULL;
+	ptr[countWord + 1] = NULL;
 	return (ptr);
 }
