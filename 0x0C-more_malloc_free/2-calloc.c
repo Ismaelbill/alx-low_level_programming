@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == 0)
 		return (NULL);
 	c = ptr;
-	for (i = 0; i < nmemb; i++)
+	for (i = 0; i < (sizeof(int) * nmemb); i++)
 	{
 		*c = zero;
 		c++;
