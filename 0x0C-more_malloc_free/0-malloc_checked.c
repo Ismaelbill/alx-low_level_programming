@@ -2,15 +2,17 @@
 
 /**
  * malloc_checked - function that allocates memory using malloc
- * @b: passed value
- * Return: Returns a pointer to the allocated memory
-*/
+ * @b: the number to allocate in the memory
+ * Return: returns a pointer to the allocated memory, otherwise
+ * (98)
+ */
 
 void *malloc_checked(unsigned int b)
 {
-	int *mallP = (int *)malloc(b);
+	unsigned int *ptr;
 
-	if (mallP == 0)
+	ptr = malloc(b);
+	if (ptr == NULL)
 		exit(98);
-	return (mallP);
+	return (ptr);
 }

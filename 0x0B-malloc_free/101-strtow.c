@@ -20,7 +20,7 @@ char **strtow(char *str)
 				(str[i] != ' ' && str[i + 1] == '\0'))
 			countWord++;
 	}
-	ptr = malloc(sizeof(char *) * countWord + 4);
+	ptr = malloc(sizeof(char *) * countWord);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < (countWord); i++)
@@ -44,6 +44,7 @@ char **strtow(char *str)
 		ptr[i][l] = '\0';
 		wordStart += j;
 	}
+	ptr[i] = malloc(4);
 	ptr[countWord] = NULL;
 	return (ptr);
 }
