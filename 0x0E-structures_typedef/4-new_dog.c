@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
  * length - function returns the length of the string
  * @s: string
@@ -31,7 +31,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ne_dog == NULL || !(name) || !(owner) || age < 0)
 		return (NULL);
 
-	ne_dog->name = malloc(length(name) + 1);
+	ne_dog->name = malloc(sizeof(char) * length(name) + 1);
 
 	if (ne_dog->name == NULL)
 	{
@@ -39,13 +39,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(ne_dog);
 		return (NULL);
 	}
-	for (i = 0; i < length(name); i++)
+	for (i = 0; name[i]; i++)
 		ne_dog->name[i] = name[i];
 	ne_dog->name[i] = '\0';
 
 	ne_dog->age = age;
 
-	ne_dog->owner = malloc(length(owner) + 1);
+	ne_dog->owner = malloc(sizeof(char) * length(owner) + 1);
 
 	if (ne_dog->owner == NULL)
 	{
@@ -53,7 +53,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(ne_dog);
 		return (NULL);
 	}
-	for (i = 0; i < length(owner); i++)
+	for (i = 0; owner[i]; i++)
 		ne_dog->owner[i] = owner[i];
 	ne_dog->owner[i] = '\0';
 	return (ne_dog);
