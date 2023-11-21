@@ -11,17 +11,16 @@ int pop_listint(listint_t **head)
 	listint_t *newNode;
 	int i = 0;
 
-	if (*head == NULL)
-		return (0);
+	if (*head == NULL || head == NULL)
+		return (i);
 	newNode = *head;
 
 	(*head) = newNode->next;
+	i = newNode->n;
 	free(newNode);
 	newNode = (*head);
 	while (newNode)
-	{
-		i++;
 		newNode = newNode->next;
-	}
+
 	return (i);
 }
