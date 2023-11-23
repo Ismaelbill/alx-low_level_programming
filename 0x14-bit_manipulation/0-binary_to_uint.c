@@ -10,7 +10,8 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0, j, arr[] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512};
+	int i = 0, j, arr[] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512,
+1024, 2048, 4096, 8192, 16384, 32768};
 	unsigned int sum = 0;
 
 	if (!b)
