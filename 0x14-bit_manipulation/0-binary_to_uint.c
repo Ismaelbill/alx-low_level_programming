@@ -7,11 +7,9 @@
  * Return: the converted number, otherwise 0
  */
 
-
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0, j, arr[] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512,
-1024, 2048, 4096, 8192, 16384, 32768};
+	int i = 0, j;
 	unsigned int sum = 0;
 
 	if (!b)
@@ -28,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 	while (b[i])
 	{
 		if (b[j - 1] == '1')
-			sum += arr[i];
+			sum += (1 << i);
 		i++;
 		j--;
 	}
