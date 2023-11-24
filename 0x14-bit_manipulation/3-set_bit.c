@@ -13,7 +13,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	if (index < sizeof(unsigned long int) || *n == 0)
 	{
-		res = 1 << index;
+		res = 1UL << index;
 		*n |= res;
 		return (1);
 	}
