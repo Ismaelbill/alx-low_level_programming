@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	int fileNum, fileNum2;
 	char buffer[BUFF_SIZE];
+	ssize_t b;
 
 	if (argc != 3)
 	{
@@ -24,16 +25,17 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	read(fileNum, buffer, (BUFF_SIZE));
+	b = read(fileNum, buffer, (BUFF_SIZE));
 	fileNum2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fileNum2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	write(fileNum2, buffer, strlen(buffer));
+	if (b == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+
 	fileNum = close(fileNum);
 	fileNum2 = close(fileNum2);
+
 	if (fileNum)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]), exit(100);
 	if (fileNum2)
