@@ -15,26 +15,28 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fileNum = open(argv[1], O_RDONLY);
 	if (fileNum == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	read(fileNum, buffer, (BUFF_SIZE));
 	fileNum2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fileNum2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	write(fileNum2, buffer, strlen(buffer));
 	fileNum = close(fileNum);
 	fileNum2 = close(fileNum2);
-	if (fileNum || fileNum2)
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n"), exit(100);
+	if (fileNum)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]), exit(100);
+	if (fileNum2)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[2]), exit(100);
 	return (0);
 }
