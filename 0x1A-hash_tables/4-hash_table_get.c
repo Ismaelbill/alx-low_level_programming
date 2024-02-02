@@ -12,15 +12,16 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *node;
-	unsigned long int idx = key_index((unsigned char *)key, ht->size);
+	unsigned long int idx;
 
 	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
 			key == NULL || strlen(key) == 0)
 		return (NULL);
+	idx = key_index((unsigned char *)key, ht->size);
 	node = ht->array[idx];
 	while (node != NULL)
 	{
-		if (strcmp(key, node->key) == 0)
+		if (strcmp(node->key, key) == 0)
 			return (node->value);
 		node = node->next;
 	}
